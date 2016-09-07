@@ -1,11 +1,13 @@
 
+/**
+*	application constants
+**/
 
 if (!window.location.origin) {
 	window.location.origin = window.location.protocol + "//" + window.location.hostname + (window.location.port ? ':' + window.location.port : '');
 }
 
-var CNJS = CNJS || {};
-CNJS.Config = {
+var Config = {
 	siteUrl: window.location.origin,
 	isIE9: navigator.userAgent.indexOf('MSIE 9') !== -1,
 	isIE10: navigator.userAgent.indexOf('MSIE 10') !== -1,
@@ -15,12 +17,3 @@ CNJS.Config = {
 	hasFormValidation: typeof document.createElement('input').checkValidity === 'function',
 	hasTouch: !!('ontouchstart' in window)
 };
-CNJS.UTILS = CNJS.UTILS || {};
-CNJS.UI = CNJS.UI || {};
-
-$(function() {
-	CNJS.$window = $(window);
-	CNJS.$document = $(document);
-	CNJS.$html = $('html');
-	CNJS.$body = $('body');
-});
