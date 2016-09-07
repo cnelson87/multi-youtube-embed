@@ -1,0 +1,462 @@
+
+/*	-----------------------------------------------
+
+	form elements & fieldset styles
+
+	----------------------------------------------- */
+
+/**
+*	basic form elements
+**/
+
+fieldset {
+	margin: 0 0 1.5em 0;
+}
+
+legend {
+	display: none;
+}
+
+label, span.label {
+	display: inline-block;
+	color: #333;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 18px;
+	padding-top: 2px; /* matches input padding-top for vertical alignment */
+}
+label.disabled {
+	color: #ccc;
+}
+
+output {
+	display: inline-block;
+	color: #333;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 18px;
+	padding-top: 2px; /* matches input padding-top for vertical alignment */
+}
+
+input, select, textarea, button {
+	color: #333;
+	font-family: Arial, sans-serif;
+	font-size: 14px;
+	line-height: 16px;
+	vertical-align: top;
+	margin: 0;
+	padding: 0;
+}
+
+input:invalid,
+select:invalid,
+textarea:invalid {
+	box-shadow: none;
+	outline: 0;
+}
+
+::-webkit-input-placeholder {
+	color: #ababab;
+	opacity: 1;
+}
+::-moz-placeholder {
+	color: #ababab;
+	opacity: 1;
+}
+:-ms-input-placeholder {
+	color: #ababab;
+	opacity: 1;
+}
+::input-placeholder {
+	color: #ababab;
+	opacity: 1;
+}
+
+/* start text inputs, selects, textareas */
+
+input[type=text],
+input[type=password],
+input[type=email],
+input[type=number],
+input[type=tel],
+input[type=url],
+select,
+textarea {
+	width: 140px;
+	height: 24px;
+	border: 1px solid #ccc;
+	border-radius: 3px;
+	padding: 2px;
+}
+
+select {
+	width: auto;
+	min-width: 80px;
+	max-width: 200px;
+}
+
+textarea {
+	height: 38px;
+	line-height: 16px;
+	resize: none;
+}
+
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus,
+input[type=number]:focus,
+input[type=tel]:focus,
+input[type=url]:focus,
+select:focus,
+textarea:focus {
+	border-color: #333;
+	outline: none;
+}
+
+input[type=text][disabled],
+input[type=password][disabled],
+input[type=email][disabled],
+input[type=number][disabled],
+input[type=tel][disabled],
+input[type=url][disabled],
+input[type=text].disabled,
+input[type=password].disabled,
+input[type=email].disabled,
+input[type=number].disabled,
+input[type=tel].disabled,
+input[type=url].disabled,
+select[disabled], select.disabled,
+textarea[disabled], textarea.disabled {
+	color: #ccc;
+	border-color: #dedede;
+}
+
+input[type=text].invalid,
+input[type=password].invalid,
+input[type=email].invalid,
+input[type=number].invalid,
+input[type=tel].invalid,
+input[type=url].invalid,
+select.invalid,
+textarea.invalid {
+	border-color: #c00;
+}
+
+input.input-med,
+select.input-med {
+	/* default */
+	width: 140px;
+}
+input.input-xshort,
+select.input-xshort {
+	width: 40px;
+	min-width: 40px;
+}
+input.input-short,
+select.input-short {
+	width: 80px;
+}
+input.input-long,
+select.input-long {
+	width: 240px;
+}
+input.input-xlong,
+select.input-xlong {
+	width: 360px;
+}
+input.input-auto,
+select.input-auto {
+	width: auto;
+	min-width: auto;
+}
+
+textarea.textarea-med {
+	width: 280px;
+	height: 70px; /* 16px * 4 line-height + 6px padding & border */
+}
+textarea.textarea-lrg {
+	width: 500px;
+	height: 102px; /* 16px * 6 line-height + 6px padding & border */
+}
+
+/* end text inputs, selects, textareas */
+
+/* start checkbox & radio inputs */
+
+input[type=checkbox],
+input[type=radio] {
+	/* setting exact size removes IE padding, makes uniform cross-browser */
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+	vertical-align: middle;
+}
+	input[type=checkbox] + label,
+	input[type=radio] + label {
+		padding-top: 0;
+	}
+input[type=checkbox][disabled],
+input[type=radio][disabled],
+input[type=checkbox].disabled,
+input[type=radio].disabled {
+	cursor: default;
+}
+	input[type=checkbox][disabled] + label,
+	input[type=radio][disabled] + label,
+	input[type=checkbox].disabled + label,
+	input[type=radio].disabled + label {
+		color: #ccc;
+	}
+
+/* end checkbox & radio inputs */
+
+/* start range input */
+
+input[type=range] {
+	width: 140px;
+	height: 24px;
+	cursor: pointer;
+}
+	input[type=range][disabled],
+	input[type=range].disabled {
+		cursor: default;
+	}
+
+/* end range input */
+
+/* start buttons */
+
+input[type=submit],
+input[type=reset],
+input[type=button],
+button {
+	cursor: pointer;
+	min-width: 100px;
+	font-size: 14px;
+	font-weight: bold;
+	line-height: 16px;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	vertical-align: middle;
+	background: #ccc;
+	border: 1px solid #333;
+	border-radius: 3px;
+	padding: 4px 12px;
+	overflow: visible; /* old IE width fix, does not affect other browsers */
+	transition: color .2s, background-color .2s;
+}
+input[type=submit]:focus, input[type=submit]:hover,
+input[type=reset]:focus, input[type=reset]:hover,
+input[type=button]:focus, input[type=button]:hover,
+button:focus , button:hover {
+	background: #dedede;
+	outline: none;
+}
+
+input.btn, input.sm-btn {
+	color: #fff;
+	background: #900;
+}
+input.btn:focus, input.btn:hover,
+input.sm-btn:focus, input.sm-btn:hover {
+	background: #c00;
+}
+
+input.alt-btn, input.sm-alt-btn {
+	color: #900;
+	background: #fff;
+	border-color: #900;
+}
+input.alt-btn:focus, input.alt-btn:hover,
+input.sm-alt-btn:focus, input.sm-alt-btn:hover {
+	color: #333;
+	background: #fff;
+	border-color: #333;
+}
+
+input.sm-btn, input.sm-alt-btn {
+	min-width: auto;
+	font-size: 11px;
+	font-weight: normal;
+	padding: 1px 8px;
+}
+
+/* end buttons */
+
+.form-note { /* note next to an input field */
+	display: inline-block;
+	color: #999;
+	font-size: 11px;
+	line-height: 15px;
+	margin: 5px 0 0 5px;
+}
+.form-message { /* message below an input field */
+	display: block;
+	color: #999;
+	font-size: 11px;
+	line-height: 15px;
+	margin-top: 5px;
+}
+
+input + input, input + select, input + textarea, input + output,
+select + input, select + select, select + textarea, select + output,
+textarea + input, textarea + select, textarea + textarea, textarea + output {
+	margin-left: 5px;
+}
+
+/*** /basic form elements ***/
+
+
+/**
+*	fieldset - list classes
+**/
+
+/*** text inputs, selects, textareas ***/
+
+ol.horizontal-fields, ul.horizontal-fields,
+ol.vertical-fields, ul.vertical-fields,
+ol.inline-fields, ul.inline-fields,
+ol.column-fields, ul.column-fields {
+	list-style: none;
+	margin: 0;
+}
+	.horizontal-fields > li,
+	.vertical-fields > li,
+	.inline-fields > li,
+	.column-fields > li {
+		min-height: 24px; /* matches input height */
+		margin: 0 0 8px 0;
+	}
+
+	/* side-by-side label / input */
+	.horizontal-fields > li > label,
+	.horizontal-fields > li > span.label {
+		width: 120px;
+		text-align: right;
+		margin-right: 5px;
+	}
+	.horizontal-fields.label-width-short > li > label,
+	.horizontal-fields.label-width-short > li > span.label,
+	.horizontal-fields > li > label.width-short,
+	.horizontal-fields > li > span.label.width-short {
+		width: 80px;
+	}
+	.horizontal-fields.label-width-long > li > label,
+	.horizontal-fields.label-width-long > li > span.label,
+	.horizontal-fields > li > label.width-long,
+	.horizontal-fields > li > span.label.width-short {
+		width: 160px;
+	}
+	.horizontal-fields.label-width-auto > li > label,
+	.horizontal-fields.label-width-auto > li > span.label,
+	.horizontal-fields > li > label.width-auto,
+	.horizontal-fields > li > span.label.width-short {
+		width: auto;
+	}
+	.horizontal-fields.label-align-left > li > label,
+	.horizontal-fields.label-align-left > li > span.label,
+	.horizontal-fields > li > label.align-left,
+	.horizontal-fields > li > span.label.align-left {
+		text-align: left;
+	}
+
+	/* line-up .form-message with text inputs (matches label width + margin) */
+	.horizontal-fields div.form-message {
+		margin-left: 132px;
+	}
+	.horizontal-fields.label-width-short div.form-message {
+		margin-left: 92px;
+	}
+	.horizontal-fields.label-width-long div.form-message {
+		margin-left: 172px;
+	}
+
+	/* stacked label / input */
+	.vertical-fields > li > label,
+	.vertical-fields > li > span.label {
+		display: block;
+		margin: 0 0 2px 0;
+	}
+
+	/* label / input side-by-side */
+	.inline-fields > li {
+		display: inline-block;
+		margin-right: 10px;
+	}
+	.inline-fields > li.full-width {
+		display: block;
+		margin-right: 0;
+	}
+	.inline-fields > li > label,
+	.inline-fields > li > span.label {
+		margin-right: 5px;
+	}
+
+	/* label / input in pseudo columns */
+	.column-fields > li {
+		width: 50%;
+		padding-right: 1em;
+	}
+	.column-fields > li:nth-child(odd) {
+		float: left;
+		clear: left;
+	}
+	.column-fields > li:nth-child(even) {
+		float: right;
+		clear: right;
+	}
+
+/*** checkbox and radio inputs ***/
+
+/* use with .vertical-fields or .inline-fields */
+ol.cb-rb-fields, ul.cb-rb-fields {
+	list-style: none;
+	margin: 0;
+}
+	.cb-rb-fields > li {
+		min-height: 18px;
+		margin: 0 0 8px 0;
+	}
+	.cb-rb-fields input[type=checkbox],
+	.cb-rb-fields input[type=radio] {
+		float: left;
+	}
+	.cb-rb-fields > li > label {
+		display: block;
+		margin: 0 0 0 20px;
+	}
+
+	.vertical-fields.cb-rb-fields > li > label {
+		margin: 0 0 8px 20px;
+	}
+
+	.inline-fields.cb-rb-fields > li {
+		display: inline-block;
+		margin-right: 10px;
+	}
+
+	/* line-up nested .cb-rb-fields with text inputs (matches label width + margin) */
+	.horizontal-fields .cb-rb-fields {
+		display: inline-block;
+		vertical-align: top;
+		margin: 2px 0 -8px 0;
+	}
+
+	.horizontal-fields > li > .cb-rb-fields:first-child {
+		margin-left: 128px;
+	}
+	.horizontal-fields.label-width-short > li > .cb-rb-fields:first-child {
+		margin-left: 88px;
+	}
+	.horizontal-fields.label-width-long > li > .cb-rb-fields:first-child {
+		margin-left: 168px;
+	}
+
+/*** fieldset/div wrapper for form buttons ***/
+.form-btns {
+	padding-top: 8px;
+	border-top: 1px solid #ccc;
+}
+
+/*** /fieldset classes ***/

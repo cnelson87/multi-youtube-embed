@@ -1,0 +1,69 @@
+
+/*	-----------------------------------------------
+
+	Custom Components
+
+	----------------------------------------------- */
+
+/**
+*	responsive iframe (ex: video embed)
+**/
+
+.responsive-iframe {
+	display: block;
+	width: 100%;
+	height: 0;
+	padding-top: 56.25%;
+	margin-bottom: 20px;
+	position: relative;
+}
+.responsive-iframe.ar4x3 {
+	padding-top: 75%;
+}
+	.responsive-iframe iframe {
+		display: block;
+		width: 100%;
+		height: 100%;
+		border: 0;
+		position: absolute;
+		left: 0;
+		top: 0;
+	}
+
+/*** /responsive iframe ***/
+
+
+/**
+*	grid
+**/
+
+.grid-row {
+	display: block;
+	position: relative;
+}
+.grid-cell {
+	display: block;
+	margin-bottom: 20px;
+	position: relative;
+}
+	.grid-cell .responsive-iframe {
+		margin-bottom: 0;
+	}
+
+/* Tablet+ */
+@media (min-width: 768px) {
+	.grid-row {
+		margin: 0 -10px;
+	}
+	.grid-cell {
+		float: left;
+		padding: 0 10px;
+		width: 50%;
+	}
+	/* center the last child */
+	.grid-cell:last-child:nth-child(odd) {
+		margin-left: 25%;
+	}
+}
+
+/*** /grid ***/
