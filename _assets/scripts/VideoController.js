@@ -5,6 +5,8 @@ var VideoController = function() {
 	var ytVideoPlayers = {};
 	var currentVideoPlayer = null;
 
+	if (!elVideoPlayers.length) {return;}
+
 	var onStateChange = function(state) {
 		var id = state.target.a.id;
 		if (state.data === 0) {
